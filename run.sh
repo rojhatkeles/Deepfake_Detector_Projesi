@@ -23,14 +23,14 @@ echo -e "✅ Temizlik tamamlandı!\n"
 echo -e "🧠 ${GREEN}[1/2] Yapay Zeka Derin Öğrenme API'si (FastAPI) Uyandırılıyor...${NC}"
 cd /Users/rojhat/Desktop/Deepfake_Detector_Projesi
 source .venv/bin/activate
-uvicorn api:app --reload --port 8089 > backend_logs.txt 2>&1 &
+uvicorn api:app --reload --port 8089 > /dev/null 2>&1 &
 BACKEND_PID=$!
 sleep 2 # Motorun ısınması için bekleme süresi
 
 # Aşama 3: Node.js Frontend (Kullanıcı Arayüzü)
 echo -e "🖥️  ${GREEN}[2/2] Reaktif Kullanıcı Arayüzü (React/Vite) Yükleniyor...${NC}"
 cd frontend
-npm run dev -- --port 8090 > ../frontend_logs.txt 2>&1 &
+npm run dev -- --port 8090 > /dev/null 2>&1 &
 FRONTEND_PID=$!
 sleep 2
 
