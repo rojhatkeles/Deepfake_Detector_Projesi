@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Dev Verikümeleri ve Modeller (GitHub standart limitlerini aştıkları için git'e gönderilmez)
+archive-2/
+data/
+data_cropped/
+saved_models/*.pth
