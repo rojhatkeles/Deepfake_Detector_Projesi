@@ -22,8 +22,8 @@ Trained locally over a massive **140,000 image dataset** (Kaggle's 'Real vs Fake
 ## ⚙️ Detailed Installation & Build Process
 
 > ⚠️ **IMPORTANT NOTICE FOR JURY & EVALUATORS:**
-> Due to GitHub's strict file size protocols, the compiled deep learning weights (`best_model.pth`, ~520MB) cannot be pushed to this repository. 
-> To successfully execute the AI predictions locally, please **[DOWNLOAD THE MODEL WEIGHTS HERE](#)** *(Insert Google Drive Link Here)* and place the `best_model.pth` file directly into the `saved_models/` directory before launching the app.
+> Due to GitHub's strict file size protocols and **Intellectual Property (IP) security**, the compiled deep learning weights (`best_model.pth`, ~520MB) are intentionally excluded from this public repository. 
+> To successfully execute the AI predictions locally, please refer to the **Access Token/Download Link** provided separately in the official course submission portal or contact the project developer. Once obtained, place the `best_model.pth` file directly into the `saved_models/` directory before launching the app.
 
 **Prerequisites:** 
 - Python 3.10+
