@@ -8,3 +8,6 @@ archive-2/
 data/
 data_cropped/
 saved_models/*.pth
+
+# Uygulama Çalışma Logları
+*_logs.txt
