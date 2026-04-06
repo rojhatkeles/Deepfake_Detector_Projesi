@@ -7,3 +7,6 @@ pandas
 Pillow
 matplotlib
 scikit-learn
+fastapi
+uvicorn
+python-multipart

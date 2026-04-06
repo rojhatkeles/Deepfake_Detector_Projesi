@@ -1,0 +1,15 @@
+INFO:     Will watch for changes in these directories: ['/Users/rojhat/Desktop/Deepfake_Detector_Projesi']
+INFO:     Uvicorn running on http://127.0.0.1:8089 (Press CTRL+C to quit)
+INFO:     Started reloader process [78867] using StatReload
+INFO:     Started server process [78870]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:54951 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54951 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54951 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54951 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54960 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55004 - "POST /analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55031 - "POST /analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55031 - "POST /analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55076 - "POST /analyze HTTP/1.1" 200 OK

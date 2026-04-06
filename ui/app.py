@@ -16,35 +16,62 @@ from facenet_pytorch import MTCNN
 # 1. Arayüz Ayarları (UI Configurations)
 st.set_page_config(page_title="Deepfake Dedektörü XAI", page_icon="🕵️", layout="wide")
 
-# Modern, karanlık ve neon kırmızı odaklı tasarım (#ff4b4b Streamlit kırmızısıdır)
+# Kurumsal (Enterprise) ve Minimalist SaaS Arayüzü Eğilimi
 st.markdown("""
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+    
+    html, body, [class*="css"]  {
+        font-family: 'Inter', sans-serif !important;
+    }
+    
+    /* Ana Arka Plan Seti (Ultra Temiz Koyu Mod) */
     .stApp {
-        background: #0e1117;
+        background: #0a0a0a;
+        color: #ededed;
     }
+    
+    /* Streamlit Kalabalıklarını (Footer, Header, Menü) Gizle */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    
+    /* Yükleme Alanı - Minimalist */
+    .stFileUploader > div > div {
+        background: transparent;
+        border: 1px dashed #333333;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+    }
+    .stFileUploader > div > div:hover {
+        border-color: #666666;
+        background: #111111;
+    }
+    
+    /* Sonuç Kartları - Corporate Stili */
     .metric-card {
-        background: rgba(30,30,30, 0.8);
+        background: #121212;
+        border: 1px solid #2a2a2a;
         border-radius: 12px;
-        padding: 20px;
-        text-align: center;
-        animation: fadeIn 1s;
+        padding: 24px;
+        text-align: left;
     }
-    h1 {
-        text-align: center;
-        background: -webkit-linear-gradient(#eee, #ff4b4b);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        padding-bottom: 10px;
+    
+    /* Net Başlıklar ve Griler */
+    h1, h2, h3, h4 {
+        color: #ffffff;
+        font-weight: 500;
+        letter-spacing: -0.02em;
     }
-    .footer {
-        text-align: center;
-        font-size: 14px;
-        color: #888;
-        margin-top: 50px;
+    
+    p {
+        color: #a1a1a1;
+        font-size: 15px;
+        line-height: 1.6;
     }
-    @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
+    
+    .stSpinner > div > div {
+        border-color: #ffffff !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -144,8 +171,8 @@ if uploaded_file is not None:
                 st.image(heatmap_pil, use_column_width=True)
                 
             st.markdown("---")
-            # Sonuç Kutuları (Dynamic UX)
+            # Sonuç Kutuları (Dynamic Premium UX)
             if is_fake:
-                st.markdown(f"<div class='metric-card' style='border: 2px solid #ff4b4b; background: rgba(255, 75, 75, 0.1)'><h2>🚨 DİKKAT: %{confidence:.2f} DEEPFAKE TESPİT EDİLDİ</h2><p>Model matris özelliklerini inceledi ve yukarıdaki zihin haritasındaki renkli (kızıl/sarı) noktalardaki doku anormalliklerine odaklanarak sahtelik kararı verdi.</p></div>", unsafe_allow_html=True)
+                st.markdown(f"<div class='metric-card' style='border-bottom: 4px solid #ff4b4b; background: linear-gradient(180deg, rgba(255,75,75,0.05) 0%, rgba(20,25,35,0.6) 100%);'><h2 style='color:#ff4b4b; letter-spacing:1px; margin-bottom:5px;'>🚨 DİKKAT: %{confidence:.2f} DEEPFAKE</h2><p style='color:#bbb; font-size:16px; font-weight:300;'>Ağ motoru, Grad-CAM ısı haritasındaki sıcak noktalarda yer alan <b style='color:#fff'>sentetik piksel anormalliklerine</b> odaklanarak sahtelik teşhisi koydu.</p></div>", unsafe_allow_html=True)
             else:
-                st.markdown(f"<div class='metric-card' style='border: 2px solid #00f260; background: rgba(0, 242, 96, 0.1)'><h2>✅ GÜVENİLİR: %{confidence:.2f} ORANINDA GERÇEK YÜZ</h2><p>Ağ algılayıcıları resimde Deepfake pürüzlerine veya sentetik piksellere rastlamadı.</p></div>", unsafe_allow_html=True)
+                st.markdown(f"<div class='metric-card' style='border-bottom: 4px solid #00f260; background: linear-gradient(180deg, rgba(0,242,96,0.05) 0%, rgba(20,25,35,0.6) 100%);'><h2 style='color:#00f260; letter-spacing:1px; margin-bottom:5px;'>✅ GÜVENİLİR: %{confidence:.2f} GERÇEK YÜZ</h2><p style='color:#bbb; font-size:16px; font-weight:300;'>Derin algılayıcılar yüz konturlarında herhangi bir değiştirilmiş Deepfake izine (<b style='color:#fff'>AI imzasına</b>) rastlamadı.</p></div>", unsafe_allow_html=True)
